@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year Colorful Neon Animation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            position: relative;
+
+            background: linear-gradient(135deg, rgba(0, 0, 0, 1) 0%, rgba(20, 20, 30, 1) 50%, rgba(0, 0, 50, 1) 100%), 
+                        url('https://www.w3schools.com/w3images/space.jpg') no-repeat center center fixed;
+            background-size: cover;
+            animation: spaceBackground 30s infinite alternate;
+        }
+
+        @keyframes spaceBackground {
+            0% {
+                background-position: center center;
+            }
+            50% {
+                background-position: -10% -10%;
+            }
+            100% {
+                background-position: center center;
+            }
+        }
+
+        .message {
+            font-size: 8vw;
+            font-weight: bold;
+            color: #ff1493;
+            display: flex;
+            gap: 10px;
+            text-align: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            -webkit-text-stroke: 2px #ffffff;
+            text-shadow: 0 0 5px #ff1493, 0 0 10px #ff1493, 0 0 20px #ff1493, 0 0 40px #ff1493, 0 0 80px #ff1493, 0 0 90px #ff1493, 0 0 100px #ff1493, 0 0 150px #ff1493;
+        }
+
+        .letter {
+            animation: neonAnimation 4s infinite alternate;
+        }
+
+        @keyframes neonAnimation {
+            0% {
+                text-shadow: 0 0 5px #ff1493, 0 0 10px #ff1493, 0 0 20px #ff1493, 0 0 40px #ff1493, 0 0 80px #ff1493, 0 0 90px #ff1493, 0 0 100px #ff1493, 0 0 150px #ff1493;
+                color: #ff1493;
+            }
+            25% {
+                text-shadow: 0 0 5px #ff6347, 0 0 10px #ff6347, 0 0 20px #ff6347, 0 0 40px #ff6347, 0 0 80px #ff6347, 0 0 90px #ff6347, 0 0 100px #ff6347, 0 0 150px #ff6347;
+                color: #ff6347;
+            }
+            50% {
+                text-shadow: 0 0 5px #1e90ff, 0 0 10px #1e90ff, 0 0 20px #1e90ff, 0 0 40px #1e90ff, 0 0 80px #1e90ff, 0 0 90px #1e90ff, 0 0 100px #1e90ff, 0 0 150px #1e90ff;
+                color: #1e90ff;
+            }
+            75% {
+                text-shadow: 0 0 5px #32cd32, 0 0 10px #32cd32, 0 0 20px #32cd32, 0 0 40px #32cd32, 0 0 80px #32cd32, 0 0 90px #32cd32, 0 0 100px #32cd32, 0 0 150px #32cd32;
+                color: #32cd32;
+            }
+            100% {
+                text-shadow: 0 0 5px #ff1493, 0 0 10px #ff1493, 0 0 20px #ff1493, 0 0 40px #ff1493, 0 0 80px #ff1493, 0 0 90px #ff1493, 0 0 100px #ff1493, 0 0 150px #ff1493;
+                color: #ff1493;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Delay each letter's appearance */
+        .letter:nth-child(1) { animation-delay: 0.2s; }
+        .letter:nth-child(2) { animation-delay: 0.4s; }
+        .letter:nth-child(3) { animation-delay: 0.6s; }
+        .letter:nth-child(4) { animation-delay: 0.8s; }
+        .letter:nth-child(5) { animation-delay: 1s; }
+        .letter:nth-child(6) { animation-delay: 1.2s; }
+        .letter:nth-child(7) { animation-delay: 1.4s; }
+        .letter:nth-child(8) { animation-delay: 1.6s; }
+        .letter:nth-child(9) { animation-delay: 1.8s; }
+        .letter:nth-child(10) { animation-delay: 2s; }
+        .letter:nth-child(11) { animation-delay: 2.2s; }
+        .letter:nth-child(12) { animation-delay: 2.4s; }
+        .letter:nth-child(13) { animation-delay: 2.6s; }
+
+        /* Stars (40+ stars added) */
+        .star {
+            position: absolute;
+            border-radius: 50%;
+            background-color: #ffff00;
+            animation: starGlow 2s ease-in-out infinite, colorChange 3s infinite alternate;
+        }
+
+        /* Shining star effect */
+        @keyframes starGlow {
+            0% {
+                box-shadow: 0 0 5px #ffff00, 0 0 10px #ffff00;
+                opacity: 0.8;
+            }
+            50% {
+                box-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00;
+                opacity: 1;
+            }
+            100% {
+                box-shadow: 0 0 5px #ffff00, 0 0 10px #ffff00;
+                opacity: 0.8;
+            }
+        }
+
+        /* Color-changing stars */
+        @keyframes colorChange {
+            0% {
+                background-color: #ffff00;
+            }
+            25% {
+                background-color: #ff1493;
+            }
+            50% {
+                background-color: #1e90ff;
+            }
+            75% {
+                background-color: #32cd32;
+            }
+            100% {
+                background-color: #ffff00;
+            }
+        }
+
+        .star {
+            width: 3px;
+            height: 3px;
+            animation-duration: calc(2s + (Math.random() * 2))s; /* Random duration for glow effect */
+        }
+
+        /* Adding stars at random positions (40+ stars) */
+        .star:nth-child(1) { top: 5%; left: 8%; }
+        .star:nth-child(2) { top: 10%; left: 15%; }
+        .star:nth-child(3) { top: 12%; left: 60%; }
+        .star:nth-child(4) { top: 15%; left: 70%; }
+        .star:nth-child(5) { top: 18%; left: 22%; }
+        .star:nth-child(6) { top: 20%; left: 80%; }
+        .star:nth-child(7) { top: 25%; left: 35%; }
+        .star:nth-child(8) { top: 30%; left: 40%; }
+        .star:nth-child(9) { top: 35%; left: 50%; }
+        .star:nth-child(10) { top: 38%; left: 95%; }
+        .star:nth-child(11) { top: 40%; left: 45%; }
+        .star:nth-child(12) { top: 42%; left: 60%; }
+        .star:nth-child(13) { top: 45%; left: 70%; }
+        .star:nth-child(14) { top: 50%; left: 15%; }
+        .star:nth-child(15) { top: 52%; left: 90%; }
+        .star:nth-child(16) { top: 55%; left: 33%; }
+        .star:nth-child(17) { top: 58%; left: 60%; }
+        .star:nth-child(18) { top: 60%; left: 72%; }
+        .star:nth-child(19) { top: 62%; left: 80%; }
+        .star:nth-child(20) { top: 65%; left: 28%; }
+        .star:nth-child(21) { top: 68%; left: 50%; }
+        .star:nth-child(22) { top: 70%; left: 5%; }
+        .star:nth-child(23) { top: 75%; left: 50%; }
+        .star:nth-child(24) { top: 80%; left: 85%; }
+        .star:nth-child(25) { top: 82%; left: 40%; }
+        .star:nth-child(26) { top: 85%; left: 10%; }
+        .star:nth-child(27) { top: 88%; left: 25%; }
+        .star:nth-child(28) { top: 90%; left: 68%; }
+        .star:nth-child(29) { top: 92%; left: 55%; }
+        .star:nth-child(30) { top: 95%; left: 45%; }
+        .star:nth-child(31) { top: 20%; left: 55%; }
+        .star:nth-child(32) { top: 40%; left: 80%; }
+        .star:nth-child(33) { top: 50%; left: 20%; }
+        .star:nth-child(34) { top: 60%; left: 10%; }
+        .star:nth-child(35) { top: 70%; left: 30%; }
+        .star:nth-child(36) { top: 85%; left: 75%; }
+        .star:nth-child(37) { top: 90%; left: 60%; }
+        .star:nth-child(38) { top: 95%; left: 90%; }
+        .star:nth-child(39) { top: 10%; left: 40%; }
+        .star:nth-child(40) { top: 5%; left: 80%; }
+
+        /* Moon styling with rapid pulse effect */
+        .moon {
+            position: absolute;
+            top: 10%;
+            right: 5%;
+            width: 15vw;
+            height: 15vw;
+            background-color: #ffffff;  /* Change to white */
+            border-radius: 50%;
+            box-shadow: 0 0 30px #ffffff, 0 0 60px #ffffff, 0 0 90px #ffffff, 0 0 120px #ffffff; /* Initial glow */
+            animation: moonPulse 2s ease-in-out infinite; /* 0.5s pulse effect */
+        }
+
+        /* Rapid moon pulse effect */
+        @keyframes moonPulse {
+            0% {
+                box-shadow: 0 0 30px #ffffff, 0 0 60px #ffffff, 0 0 90px #ffffff, 0 0 120px #ffffff;
+            }
+            50% {
+                box-shadow: 0 0 60px #ffffff, 0 0 120px #ffffff, 0 0 180px #ffffff, 0 0 240px #ffffff;
+            }
+            100% {
+                box-shadow: 0 0 30px #ffffff, 0 0 60px #ffffff, 0 0 90px #ffffff, 0 0 120px #ffffff;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="message">
+        <div class="letter">H</div>
+        <div class="letter">a</div>
+        <div class="letter">p</div>
+        <div class="letter">p</div>
+        <div class="letter">y</div>
+        <div class="letter"> </div>
+        <div class="letter">N</div>
+        <div class="letter">e</div>
+        <div class="letter">w</div>
+        <div class="letter"> </div>
+        <div class="letter">Y</div>
+        <div class="letter">e</div>
+        <div class="letter">a</div>
+        <div class="letter">r</div>
+    </div>
+
+    <!-- Moon -->
+    <div class="moon"></div>
+
+    <!-- Stars (Added 40+ stars) -->
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+</body>
+</html>
